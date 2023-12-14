@@ -7,7 +7,7 @@ function UseGet() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await connexion;
+        const res = await connexion.get();
         setData(res.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -15,7 +15,9 @@ function UseGet() {
     };
 
     fetchData();
-  }, [data]);
+  }, []);
+
+  return { data };
 }
 
 export default UseGet;

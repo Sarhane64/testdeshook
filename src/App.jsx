@@ -1,14 +1,15 @@
-import UsePost from "./components/UsePost.jsx";
+import UseGet from "./components/UseGet.jsx";
 
 function App() {
-  const data = UsePost();
+  const { data } = UseGet();
+  console.log(data);
 
   return (
     <div>
       {data && (
         <ul>
-          {data.map((el, index) => (
-            <li key={index}>
+          {data.map((el) => (
+            <li key={el.id}>
               <div>
                 <strong>Username:</strong> {el.username}
               </div>
